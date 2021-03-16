@@ -17,3 +17,22 @@ e.addEventListener('click',f2,false) // false按冒泡方向执行函数
 ## 阻止事件冒泡
 e.stopPropagation()可以中断冒泡。 捕获无法取消。
 
+## scroll事件不可阻止默认动作
+阻止scroll默认动作没用，因先有滚动才有滚动事件，所以要阻止滚动
+```
+如何阻止滚动
+css代码阻止滚轮
+
+::-webkit-scrollbar {width: 0px!important}
+
+//PC端阻止鼠标移动和滚轮
+x.addEventListener('wheel', (e)=>{
+  console.log(1)
+  e.preventDefault()
+}) //阻止鼠标移动
+ 
+x.addEventListener('touchstart', (e)=>{
+  console.log(2)
+  e.preventDefault()
+}) //手机端阻止触屏
+```
